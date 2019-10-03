@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+
+  tasks:
+          - name: update apt
+            become: true
+            apt:
+                    update_cache: true
+          - name: install docker
+            become: true
+            apt:
+                    name: docker.io
+                    state: latest
